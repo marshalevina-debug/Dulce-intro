@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Plans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header class="page-header">
+        <div class="brand-space"></div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="theme-toggle-label">Dark mode</span>
+            <span class="theme-toggle-thumb"></span>
+        </button>
+    </header>
+
     <div class="cards-container">
         <div class="card">
-            <h1 class="card-title">Hobby</h1>
-            <p class="card-price">Free</p>
+            <h1 class="card-title">Sunshine</h1>
+            <p class="card-price">Free forever</p>
             <div class="card-content">
                 <p class="includes-text">Includes:</p>
                 <ul class="features-list">
@@ -28,7 +39,7 @@
                     </li>
                 </ul>
             </div>
-            <button class="download-button">Download</button>
+            <button class="download-button tertiary">Download</button>
         </div>
         <div class="card">
             <h1 class="card-title">Pro</h1>
@@ -56,6 +67,41 @@
             </div>
             <button class="download-button">Get Pro</button>
         </div>
-    </div>
+        <div class="card">
+            <h1 class="card-title">Rainbow</h1>
+            <p class="card-price">$40/mo.</p>
+            <div class="card-content">
+                <p class="includes-text">Everything in Sunshine, plus:</p>
+                <ul class="features-list">
+                    <li>
+                        <span class="checkmark">✓</span>
+                        Extended limits on Agent
+                    </li>
+                    <li>
+                        <span class="checkmark">✓</span>
+                        Extended limits on Tab completions
+                    </li>
+                    <li>
+                        <span class="checkmark">✓</span>
+                        Extended limits on context windows
+                    </li>
+                    <li>
+                        <span class="checkmark">✓</span>
+                        Extended limits on API requests
+                    </li>
+                </ul>
+            </div>
+                <button class="download-button primary">Get Rainbow</button>
+    </div> 
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            const isDark = body.classList.toggle('dark-mode');
+            toggleButton.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        });
+    </script>
 </body>
 </html>
